@@ -20,7 +20,7 @@
 
 <div class="card">
 	<div class="card-inner">
-		<div class="card-front">
+		<div class="card-image">
 			<a href={homepageUrl}
 				><img
 					class="screenshot"
@@ -29,15 +29,19 @@
 				/></a
 			>
 		</div>
-		<div class="card-back">
+		<div class="card-header">
 			<h1>{name}</h1>
+		</div>
+		<div class="card-description">
 			<p>{description}</p>
-			<p>
-				<em>Source code:</em>
-			</p>
-			<div style="text-align: center;">
+		</div>
+		<div class="card-source-code-section">
+			<p><em>Source code:</em></p>
+			<div class="centered-github-icon-link">
 				<GitHubRepoLink color={primaryLanguageColor} {url} {name} />
 			</div>
+		</div>
+		<div class="card-language-bar-section">
 			<p><em>Languages:</em></p>
 			<Languages languages={languages.edges} {totalSize} />
 		</div>
@@ -45,11 +49,6 @@
 </div>
 
 <style>
-	h1,
-	p {
-		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-			Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	}
 	h1 {
 		font-size: 1.8rem;
 		margin-bottom: 1rem;
@@ -63,6 +62,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.4);
 		background-color: white;
 
@@ -81,9 +81,22 @@
 		transform: translateY(-3px) scale(1.05);
 		box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.2);
 	}
-
+	.card-image {
+		text-align: center;
+		border-bottom: 1px solid grey;
+		padding: 1rem;
+	}
+	/* .card-header {
+		margin-top: 1rem;
+	} */
+	.card-header h1 {
+		margin-top: 2rem;
+	}
 	.screenshot {
 		width: 200px;
 		height: 220px;
+	}
+	.centered-github-icon-link {
+		text-align: center;
 	}
 </style>

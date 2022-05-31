@@ -37,7 +37,6 @@
 		background-color: black;
 		display: flex;
 		justify-content: center;
-		/* align-items: flex-start; */
 	}
 	.language-bar-segment {
 		display: block;

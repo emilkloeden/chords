@@ -17,6 +17,7 @@
 	}
 	a {
 		text-decoration: none;
+		color: black;
 	}
 	a:hover span {
 		border-bottom: 1px dashed black;
